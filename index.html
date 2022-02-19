@@ -26,7 +26,6 @@
     style="background-image: url(./kuvat/Taustakuva2.jpg)"
     onload="LoadInitialContent()"
   >
-    <!-- Otsikkopalkki -->
     <div class="container-fluid bg-vari">
       <div class="row">
         <div>
@@ -37,7 +36,6 @@
       </div>
     </div>
 
-    <!-- Navigointipalkki -->
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <button
@@ -104,15 +102,11 @@
       </nav>
     </div>
 
-    <!-- Sisältö -->
     <div class="container-fluid bg-white min-vh-100">
       <div class="row" id="sisalto"></div>
     </div>
 
-    <!-- JavaScript-toiminnallisuus -->
-
     <script>
-      // <!-- Sisällön vaihtaminen navigointipalkin valintojen perusteella -->
       var textChange = function (index) {
         if (index == 0) {
           document.getElementById("sisalto").innerHTML = paasivuHTML;
@@ -127,7 +121,6 @@
         }
       };
 
-      // <!-- Vaihtoehtoiset sisällöt -->
       var paasivuHTML =
         '\
             <div class="col-sm-9 p-3 bg-light text-dark min-vh-100 ">\
@@ -245,7 +238,6 @@
       }
     </script>
     <footer class="page-footer font-small blue">
-      <!-- Copyright -->
       <div class="footer-copyright text-left py-3 col-sm-9 p-3">
         <span>
           <img src="./kuvat/profiilikuva.png" />
@@ -253,7 +245,6 @@
           <p class="text-white">Juha.Myller@protonmail.com</p>
         </span>
       </div>
-      <!-- Copyright -->
     </footer>
   </body>
 </html>
