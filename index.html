@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VoimanostoWebbisivu</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body
+    style="background-image: url(./kuvat/Taustakuva2.jpg)"
+    onload="LoadInitialContent()"
+  >
+    <!-- Otsikkopalkki -->
+    <div class="container-fluid bg-vari">
+      <div class="row">
+        <div>
+          <h1 class="col-sm-10 p-3 bg-custom text-info align-self-center">
+            Voimanosto
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigointipalkki -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(0) "
+                >Pääsivu <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(1)"
+                >Soveltuvuus <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(2)"
+                >Pääliikkeet</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(3)"
+                >Välineet</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(4)"
+                >Kysely</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Sisältö -->
+    <div class="container-fluid bg-white min-vh-100">
+      <div class="row" id="sisalto"></div>
+    </div>
+
+    <!-- JavaScript-toiminnallisuus -->
+
+    <script>
+      // <!-- Sisällön vaihtaminen navigointipalkin valintojen perusteella -->
+      var textChange = function (index) {
+        if (index == 0) {
+          document.getElementById("sisalto").innerHTML = paasivuHTML;
+        } else if (index == 1) {
+          document.getElementById("sisalto").innerHTML = soveltuvuusHTML;
+        } else if (index == 2) {
+          document.getElementById("sisalto").innerHTML = paaLiikkeetHTML;
+        } else if (index == 3) {
+          document.getElementById("sisalto").innerHTML = valineetHTML;
+        } else if (index == 4) {
+          document.getElementById("sisalto").innerHTML = pollHTML;
+        }
+      };
+
+      // <!-- Vaihtoehtoiset sisällöt -->
+      var paasivuHTML =
+        '\
+            <div class="col-sm-9 p-3 bg-light text-dark min-vh-100 ">\
+            		<div data-spy="scroll" data-target="#navbar-example0" data-offset="0">\
+            		<div>\
+            		  <h3 id="sisalto">Voimanoston historiaa</h3>\
+            		  <p>Voimanosto on raaka äärimmäisyyslaji. Siinä mitataan ihmiskehon maksimaalinen voimantuotto tehokkaammin kuin missään muussa lajissa.\
+                  Lajin juuret ulottuvat syvälle historiaan.\
+                  Antiikin Kreikan olympialaisten painikisoihin valmistautunut Milo loi historian ensimmäisen progressiivisen voimaharjoitteluohjelman nostelemalla vasikkaa.\
+                  Vasikan varttuessa vahvistui myös urheilijanuorukainen. Ei ihme, että painikilpailussa ei vastusta löytynyt.\
+                  Voimanosto sai alkunsa 1950-luvun lopulla Isossa-Britanniassa. Sikäläiset kehonrakentajat päättivät testata voimiaan kilpailuissa,\
+                  joissa lajeina olivat penkkipunnerrus, jalkakyykky ja hauiskääntö. Seuraavalla vuosikymmenellä laji muuttui huomattavasti maastavedon tultua kolmanneksi lajiksi hauiskäännön tilalle.\
+                  Vuonna 1971 järjestettiin voimanoston ensimmäiset epäviralliset kilpailut Yhdysvalloissa, jonka järjesti Bob Hoffman. Seuraavana vuonna kilpailut järjestettiin uudelleen ja loppuvuodesta\
+                  perustettiin myös ensimmäinen voimanostoliitto IPF (International Powerlifting Federation IPF). Osallistujia oli alkuun vain Isosta-Britanniasta\
+                  ja Yhdysvalloista. Kahdet ensimmäiset AAU Worlds nimellä tunnetut Yorkissa Pennsylvaniassa nostetut kisat ovat tänäkin päivänä kansainväliseltä voimanostoliitolta IPF:lta noteeraamatta,\
+                  koska silloin lajilla ei ollut vielä kansainvälistä kattojärjestöä. Samoin kilpailujen osanottajat olivat kaikki amerikkalaisia. Ensimmäiset viralliset.\
+                  IPF:n alaiset voimanoston MM-kisat olivat vuonna 1973 Birminghamissa. Suomeen laji saapui 1960-1970 lukujen taitteessa. Painonnosto oli jättämässä punnerrusta pois ohjelmasta\
+                  minkä varsinkin vanhemmat lajin harrastajat kokivat menetyksenä. Näin voimanostolle syntyi tarve levytankolajien harrastajapiireissä. \
+                  Seuraavan vuosikymmenen aikana laji levisi kymmeniin eri maihin. Itäblokin maat, Venäjä etunenässä tulivat mukaan voimanostoon -90 luvun alussa.\</p>\
+                  <h3 id="nykytila">Nykytila</h3>\
+                  <p>Tänä päivänä voimanostoa harrastetaan yli 100 eri maassa. Suurimmat harrastajamäärät ovat USA:ssa ja Venäjällä. Suomessa rekisteröityjä kilpailijoita on reilu tuhat.\
+                  Järjestötasolla tilanne muistuttaa ammattinyrkkeilyä sillä kansainvälisiä keskusjärjestöjä on useampia. IPF ( International Powerlifting Federation ) on liitoista vanhin\
+                  ja laajalle levinnein. Yksitoista vuotta myöhemmin perustettu WPC ( World Powerlifting Congress ) on vahva ja toimiva järjestö USA:n lisäksi myös useissa Euroopan maissa\
+                  kuten Iso-Britanniassa, Irlannissa ja Suomessa. Suomessa lajiliittoja on kaksi. Suomen Voimanostoliitto on perustamisestaan saakka ollut IPF:n alainen liitto.\
+                  Vuonna -97 perustettu FPO ( Finland Powerlifting Organisation ) pyrkii taas tarjoamaan jäsenilleen mahdollisuuden kilpailla eri järjestöjen alaisissa kansainvälisissä kisoissa.\
+                  Suomessa FPO:n alaisia kilpailuja on noin 10 vuodessa. WPC:n alaiset kilpailut on organisoitu yksityisen yrityksen toiminnan alle.\</p>\
+            		  </div>\
+            		</div>\
+            	</div>';
+
+      var soveltuvuusHTML =
+        '\
+            <div class="col-sm-9 p-3 bg-light text-dark min-vh-100 ">\
+            		<div data-spy="scroll" data-target="#navbar-example1" data-offset="0">\
+            		<div>\
+                  <h3 id="sisalto">Sinustako voimanostaja?</h3>\
+            		  <p>Laji sopii hyvin kaiken ikäisille ja kokoisille ihmisille. Se ei vaadi suuria varoja eikä paljon aikaa. Painojen kasvaessa fyysisten ominaisuuksien lisäksi korostuvat erityisesti keskittymiskyky\
+                   ja pitkäjänteisyys. Raaka fyysinen rutistus saattaa katsomosta käsin näyttää siltä, ettei laji vaadi peruskuntoa lainkaan. Totuus on kuitenkin toinen, sillä yhdeksän kilpailusuoritusta lämmittelyineen\
+                   muodostavat useimmiten 4–5 tunnin urakan, josta suoriutuminen ilman hyvää peruskuntoa on mahdotonta. Hyvältä voimanostajalta vaaditaan myös aerobista kestävyyttä ja korkeaa maitohappokynnystä\
+                   Ikä ei todellakaan ole este. Veli Kumpuniemi teki yleisen sarjan maastanoston ME-tuloksen 47-vuotiaana. Huikea 357,5 kilon veto 82,5-kiloisiin on kestänyt jo yli kolmekymmentä vuotta.\
+                   Säännöllisesti suomessakin voimanoston kilpailuissa kilpailee 60+ vuotiaita nostajia. Maailman arvostetuimpiin voimavalmentajiin kuuluva Louie Simmons on nostanut useita\
+                   yli 400 kilon jalkakyykkyjä yli 50 vuoden ikäisenä. Tietoa voimanoston pariin aikovalle löytyy saleilta, seuroista sekä verkosta. Saleilla lajin pariin opastavat ohjaajat,\
+                   koulutetut valmentajat sekä kokeneemmat nostajat. Lajin harjoittelusta on kirjoitettu myös kaksi suomenkielistä kirjaa. Ensimmäinen askel lajin parissa on opetella oikeat nostotekniikat.\
+                   Lajin harrastajia löytyy eri ammattiryhmistä ja sosiaaliluokista. Esimerkiksi maineikkaan Westside Barbel Clubin jäseniin kuuluu ihmisiä eri aloilta.\
+                   Jäseninä on pankkiireja, tohtoreita, opettajia, mekaanikkoja, personal trainereita, hierojia ja putkimiehiä. Valtaosa menestyvistä nostajista on korkeasti koulutettua väkeä.\</p>\
+                   \
+                   <h3 id="sisalto">Turvallinen laji</h3>\
+                   <p>Voimanosto on turvallinen laji ja urheiluvammat ovat lajin parissa suhteellisen vähäisiä. Erityisesti tapaturma-alttiisiin lajeihin kuten lasketteluun tai jääkiekkoon verrattuna.\
+                    Varsinaisia tapaturmia sattuukin harvoin ja suurin osa vammoista ovat rasitusvammoja. Lihasrevähdyksiä tulee säännöllisesti. Rintalihakset ja reidet revähtävät useimmin, mutta myös hauislihaksia\
+                    on mennyt voimanostossa poikki. Olkapää vammautuu etenkin vääränlaisen harjoittelun seurauksena. Kiertäjäkalvosimen repeämiä on operoitu myös voimanoston harrastajilta.\
+                    Pitemmän aikavälin rasitusvammoja ovat polven ja kyynärpään jänteiden osittaiset repeämät. Tukirangan vammat ovat voimanostossa harvinaisia. Yleensä lajin harrastaja pääsee eroon\
+                    tukirangan kiputiloista. Suurin yksittäinen vammoja aiheuttava tekijä on virheellinen nostotekniikka. Hyvin harvoin maksimaalinen kuormitus yksin aiheuttaa vammaa.\
+                    Jokainen nostomuoto näyttää helpolta mutta vaatii oman tekniikkansa. Oikeaoppinen suoritus on paras tapa ehkäistä vammoja. Tämän takia on hyvä harrastuksen alkuvaiheessa keskittyä \
+                    oikeanlaiseen tekniikkaan, eikä antaa ”egon” mennä edellä ja nostaa suuria painoja huonolla tekniikalla. Voimanosto ei vaadi ylivoimaista liikkuvuutta, mutta lantion\
+                    ja hartianseudun lihaksisto on syytä pitää notkeana sillä levytanko ei tunne armoa. Suositeltavin tapa venytellä on harjoitusten jälkeen tai lepopäivinä.\
+                    Liika venyttely ennen kovaa harjoitusta heikentää supistusrefleksiä ja saattaa näin aiheuttaa loukkaantumisen.\</p>\
+            		  </div>\
+            		</div>\
+            	</div>';
+      var paaLiikkeetHTML =
+        '\
+            <div class="col-sm-9 p-3 bg-light text-dark min-vh-100 ">\
+            		<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">\
+            		<div>\
+                  <img src="./kuvat/squat_generated.jpg" alt="Press" width="400" height="250"  />\
+                  <h3 id="sisalto">Jalkakyykky</h3>\
+            		  <p>Jalkakyykky muodostaa voimanoston perustan ja on nostomuodoista teknisesti vaativin. Suorituksessa nostaja ottaa tangon harteilleen ja laskeutuu niin syvään kyykkyyn, \
+                    että reiden yläpinta lonkkanivelen kohdalla on alempana kuin polven yläpinta. Lajissa vaaditaan vahvojen reisien ja pakaroiden lisäksi keskivartalon lihasten voimaa. \
+                    Usein nosto epäonnistuu nostajan kumartuessa liikaa eteen vatsa- ja selkälihasten pettäessä. Suurin paino mitä jalkakyykyssä on kilpailuissa nostettu on 576 kiloa, \
+                    jonka on tehnyt USA:n Donnie Thompson. Suomalaisista suurimmat painot on kyykyssä nostanut Jonas Rantanen 575 kiloalla. Tulos oli vuosia suurin maailmassa.\</p>\
+                   \
+                    <img src="./kuvat/bench_press_generated.jpg" alt="Press" width="400" height="250" />\
+                    <h3 id="sisalto">Penkkipunnerrus</h3>\
+                   <p>Penkkipunnerrus on suosituin ylävartalon lihasvoiman mittari. Suorituksessa nostaja ottaa tangon käsiinsä, pysäyttää sen liikkumattomaksi rinnalle ja punnertaa ylös.\
+                    Liike mittaa ennen kaikkea käsien ojentajien voimaa. Samoin rinta-, hartia- ja yläselän lihakset rasittuvat suorituksessa. Maailmassa on nostettu useita yli 400 kilon nostoja, \
+                    suurin tilastonoteeraus on Ryan Kennelyn 487,5 kiloa. Suomalaisista suurimmat painot on nostanut Jani Murtomäki joka on saanut suorille käsille 420 kiloa. \
+                    Ilman penkkipunnerukseen tehtyä tukipaitaa suomen ennätys on edelleen Jari Sjömanin 290 kiloa.\</p>\
+                    <img src="./kuvat/Deadlift_generated.jpg" alt="Press" width="400" height="250" />\
+                    <h3 id="sisalto">Maastaveto</h3>\
+                   <p>Maastaveto on nostomuodoista eniten raakaa fyysistä voimaa vaativa. Koska laji on kilpailuissa vuorossa viimeisenä, mitataan siinä kilpailijan henkinen kapasiteetti ja keskittymiskyky.\
+                   Nosto suoritetaan niin että kilpailija ottaa tangosta otteen ja kohottautuu loppuasentoon, jossa selkä on suorana ja polvet lukittuina. Ilman vahvaa selkää ei maastanostossa menesty.\
+                   Nostajalta vaaditaan myös vahvoja takareisien ja pakaroiden lihaksia sekä puristusvoimaa. Myös liikkeen alkuvaiheessa, kun liike on enemmän jalkaliike, vaatii liike etureisiltä paljon.\
+                   Kovin tulos maailmassa on 500 kiloa. Sen on nostanut Eddia Hall, tosin tämä on voimamies kilpailuissa nostettu eikä virallisissa voimanostokilpailuissa.\
+                   Virallinen voimanostoennätys on Benedikt Magnússon hallussa 460,4kg. Vahvaselkäisin suomalainen on Ano Turtiainen. Hän on nostanut 405,5 kiloa. \
+                   Toinen suomalainen 400 kilon kerhossa on Mika Hiltunen. \</p>\
+            		  </div>\
+            		</div>\
+                <a href="https://www.vecteezy.com/?utm_source=vecteezy-download&utm_medium=license-info-pdf&utm_campaign=license-info-document" target="_blank">Kuvat saatu sivulta Vecteezy</a>\
+            	</div>';
+      var valineetHTML =
+        '\
+            <div class="col-sm-9 p-3 bg-light text-dark min-vh-100 ">\
+            		<div data-spy="scroll" data-target="#navbar-example3" data-offset="0">\
+            		<div>\
+                  <h3 id="sisalto">Välineet</h3>\
+            		  <p>Voimanostossa tukeviin välineisiin kuuluu nostajaa tukevat paidat, haalarit, puvut ja joskus polvisiteet. Ne ovat tehty materiaaleista jotka ovat elastisia\
+                     ja auttavat sitä kautta nostajaa suorittamaan noston tehokkaammin. Nämä välineet eivät ole kumminkaan kaikissa voimanostofederaatioissa sallittuja.\
+                     Jotkut federaatiot sallivat ”polvihihat” ja  rannetuet jotka kilpailija pystyy laittamaan ja ottamaan pois itse. Aikaisemmin mainitut avustavat välineet\
+                     vaativat yleensä toisen ihmisen avun laittaa päälle. Ainut kaikkien federaatioiden hyväksymä tukeva väline on voimanostovyö, mutta tässäkin eri federaatioilla voi olla omia kriteerejä\
+                     esimerkiksi vyön paksuuden ja leveyden kohdalla. Erinäisten välineiden käyttö ja käyttämättä jättäminen jakaa tässä urheilulajissa ennätykset kategorioihin ”un-equipped” tai ”raw\
+                     eli vain voimanostovyö välineenä ja ”equipped” jossa voi käyttää kaikkia aikaisemmin käytyjä välineitä apuna. Suurin hyöty tukevista välineistä näkyy penkissä ja kyykyssä\
+                     jos katsotaan ja verrataan kyseisten liikkeiden ennätyksiä ilman tukevia välineitä ja niiden kanssa.\</p>\
+            		  </div>\
+            		</div>\
+            	</div>';
+      var pollHTML =
+        '<form method="post" action="https://poll.pollcode.com/66492828" target="_blank"><div style="background-color:#EEEEEE;padding:2px;width:300px;font-family:Arial;font-size:small;color:#000000;">\
+        <div style="padding:2px 0px 4px 2px;"><strong>Mikä on lempiliikkeesi?</strong></div><div align="center"><input type="radio" name="answer" value="1" id="answer664928281">\
+        <label for="answer664928281">Kyykky</label> <input type="radio" name="answer" value="2" id="answer664928282"> <label for="answer664928282">Maastaveto</label>\
+        <input type="radio" name="answer" value="3" id="answer664928283"> <label for="answer664928283">Penkkipunnerrus</label> <nobr><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view"\
+        value=" View "></nobr></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>';
+
+      function LoadInitialContent() {
+        document.getElementById("sisalto").innerHTML = paasivuHTML;
+      }
+    </script>
+    <footer class="page-footer font-small blue">
+      <!-- Copyright -->
+      <div class="footer-copyright text-left py-3 col-sm-9 p-3">
+        <span>
+          <img src="./kuvat/profiilikuva.png" />
+          <h6 class="text-white">Juha Myller</h6>
+          <p class="text-white">Juha.Myller@protonmail.com</p>
+        </span>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
+</html>
