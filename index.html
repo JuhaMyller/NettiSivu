@@ -97,6 +97,15 @@
                 >Kysely</a
               >
             </li>
+            <li class="nav-item active">
+              <a
+                class="nav-link bg-secondary text-white"
+                href="#"
+                type="button"
+                onclick="textChange(5)"
+                >Yhteystiedot</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -118,6 +127,8 @@
           document.getElementById("sisalto").innerHTML = valineetHTML;
         } else if (index == 4) {
           document.getElementById("sisalto").innerHTML = pollHTML;
+        } else if (index == 5) {
+          document.getElementById("sisalto").innerHTML = yhteystiedotHTML;
         }
       };
 
@@ -226,25 +237,32 @@
             		  </div>\
             		</div>\
             	</div>';
+
       var pollHTML =
         '<form method="post" action="https://poll.pollcode.com/66492828" target="_blank"><div style="background-color:#EEEEEE;padding:2px;width:300px;font-family:Arial;font-size:small;color:#000000;">\
         <div style="padding:2px 0px 4px 2px;"><strong>Mikä on lempiliikkeesi?</strong></div><div align="center"><input type="radio" name="answer" value="1" id="answer664928281">\
         <label for="answer664928281">Kyykky</label> <input type="radio" name="answer" value="2" id="answer664928282"> <label for="answer664928282">Maastaveto</label>\
         <input type="radio" name="answer" value="3" id="answer664928283"> <label for="answer664928283">Penkkipunnerrus</label> <nobr><input type="submit" value=" Vote ">&nbsp;<input type="submit" name="view"\
         value=" View "></nobr></div><div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free polls</a></div></div></form>';
+      var yhteystiedotHTML =
+        '\
+        <div class="footer-copyright text-left py-3 col-sm-9 p-3">\
+        <span>\
+          <img src="./kuvat/profiilikuva.png"\
+          /></a>\
+        <p>Juha.Myller@protonmail.com</p>\
+         <a\
+            href="https://www.linkedin.com/in/juha-myller-754ba41b8"\
+            target="_blank"\
+            ><img style="float:left" src="./kuvat/In-Blue-26.png" /></a>\
+            <br>\
+            <p>LinkedIn profiilini</p>\
+        </span>\
+      </div>';
 
       function LoadInitialContent() {
         document.getElementById("sisalto").innerHTML = paasivuHTML;
       }
     </script>
-    <footer class="page-footer font-small blue">
-      <div class="footer-copyright text-left py-3 col-sm-9 p-3">
-        <span>
-          <img src="./kuvat/profiilikuva.png" />
-          <h6 class="text-white">Juha Myller</h6>
-          <p class="text-white">Juha.Myller@protonmail.com</p>
-        </span>
-      </div>
-    </footer>
   </body>
 </html>
