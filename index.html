@@ -55,7 +55,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(0) "
+                onclick="sisaltoMuutos(0) "
                 >Pääsivu <span class="sr-only"></span
               ></a>
             </li>
@@ -64,7 +64,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(1)"
+                onclick="sisaltoMuutos(1)"
                 >Soveltuvuus <span class="sr-only"></span
               ></a>
             </li>
@@ -73,7 +73,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(2)"
+                onclick="sisaltoMuutos(2)"
                 >Pääliikkeet</a
               >
             </li>
@@ -82,7 +82,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(3)"
+                onclick="sisaltoMuutos(3)"
                 >Välineet</a
               >
             </li>
@@ -91,7 +91,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(4)"
+                onclick="sisaltoMuutos(4)"
                 >Kysely</a
               >
             </li>
@@ -100,7 +100,7 @@
                 class="nav-link bg-secondary text-white"
                 href="#"
                 type="button"
-                onclick="textChange(5)"
+                onclick="sisaltoMuutos(5)"
                 >Yhteystiedot</a
               >
             </li>
@@ -114,7 +114,7 @@
     </div>
 
     <script>
-      var textChange = function (index) {
+      var sisaltoMuutos = function (index) {
         if (index == 0) {
           document.getElementById("sisalto").innerHTML = paasivuHTML;
         } else if (index == 1) {
